@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue | MD Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orangered: #FF4500;
+            --gray-light: #f9f9f9;
+            --gray-medium: #9ca3af;
+            --gray-border: #f3f4f6;
+            --max-width: 1280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: screen;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        header {
+            border-bottom: 1px solid var(--gray-border);
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.875rem;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: -0.025em;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 3rem;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-links a.active {
+            color: var(--orangered);
+        }
+
+        .nav-links a:hover {
+            color: var(--orangered);
+            transition: color 0.3s;
+        }
+
+        .bag-count {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+            flex-grow: 1;
+        }
+
+        .catalogue-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5rem;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .catalogue-header {
+                flex-direction: row;
+            }
+        }
+
+        h1 {
+            font-size: 3.75rem;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        #filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-medium);
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            border-bottom: 1px solid transparent;
+            cursor: pointer;
+            padding-bottom: 4px;
+            color: inherit;
+            font: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .product-card {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid transparent;
+            transition: all 0.4s;
+            display: block;
+        }
+
+        .product-card:hover {
+            border-color: #000;
+        }
+
+        .image-placeholder {
+            aspect-ratio: 3/4;
+            background-color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .view-details {
+            font-size: 10px;
+            color: #d1d5db;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-style: italic;
+            transition: transform 1s;
+        }
+
+        .product-card:hover .view-details {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .product-cat {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-medium);
+            margin-top: 0.25rem;
+        }
+
+        .product-price {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--orangered);
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 6rem 1.5rem 3rem;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo serif">MD Collection<span style="color: var(--orangered);">.</span></a>
+            <div class="nav-links">
+                <a href="#" class="active">Catalogue</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="bag-count">Bag (0)</div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="catalogue-header">
+            <h1 class="serif">The Catalogue</h1>
+            <div id="filter-container">
+                <button class="filter-btn active" onclick="filterProducts('All', this)">All</button>
+                <button class="filter-btn" onclick="filterProducts('Shoes', this)">Shoes</button>
+                <button class="filter-btn" onclick="filterProducts('Handbags', this)">Handbags</button>
+                <button class="filter-btn" onclick="filterProducts('Clothes', this)">Clothes</button>
+                <button class="filter-btn" onclick="filterProducts('Kitchenware', this)">Kitchenware</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <span>© 2026 MD Collection</span>
+            <span>Nairobi / Kenya</span>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: '1', name: 'Midnight Stiletto', price: 8500, category: 'Shoes' },
+            { id: '2', name: 'Saffiano Tote', price: 6200, category: 'Handbags' },
+            { id: '3', name: 'Granite Saute Pan', price: 4500, category: 'Kitchenware' },
+            { id: '4', name: 'Silk Utility Shirt', price: 3800, category: 'Clothes' },
+            { id: '5', name: 'Pro-Chef Spoons', price: 1800, category: 'Kitchenware' },
+            { id: '6', name: 'Urban Knit Trainer', price: 5400, category: 'Shoes' },
+            { id: '7', name: 'Crocodile Embossed Clutch', price: 4200, category: 'Handbags' },
+            { id: '8', name: 'Linen Relaxed Trouser', price: 4500, category: 'Clothes' }
+        ];
+
+        function renderProducts(filter = 'All') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'All' ? products : products.filter(p => p.category === filter);
+            
+            filtered.forEach(p => {
+                grid.innerHTML += `
+                    <a href="/product/?id=${p.id}" class="product-card">
+                        <div class="image-placeholder">
+                            <div class="view-details">View Details</div>
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                <h3 class="product-title serif">${p.name}</h3>
+                                <p class="product-cat">${p.category}</p>
+                            </div>
+                            <p class="product-price">Ksh ${p.price.toLocaleString()}</p>
+                        </div>
+                    </a>
+                `;
+            });
+        }
+
+        function filterProducts(cat, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderProducts(cat);
+        }
+
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const catParam = urlParams.get('cat');
+            if (catParam) {
+                const targetBtn = Array.from(document.querySelectorAll('.filter-btn'))
+                    .find(b => b.innerText === catParam);
+                if (targetBtn) filterProducts(catParam, targetBtn);
+                else renderProducts();
+            } else {
+                renderProducts();
+            }
+        };
+    </script>
+</body>
+</html>
