@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | MD Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orangered: #FF4500;
+            --gray-light: #f8f8f8;
+            --gray-border: #f3f4f6;
+            --gray-text: #6b7280;
+            --max-width: 1280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        header {
+            border-bottom: 1px solid var(--gray-border);
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 50;
+        }
+
+        .top-banner {
+            background-color: #000;
+            color: #fff;
+            font-size: 9px;
+            padding: 0.6rem 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+        }
+
+        nav.header-nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: -0.025em;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            align-items: center;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; gap: 3rem; font-size: 11px; }
+        }
+
+        .nav-links a:hover {
+            color: var(--orangered);
+            transition: color 0.3s;
+        }
+
+        .bag-link {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            main { padding: 8rem 1.5rem; }
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 8rem;
+            }
+        }
+
+        .contact-info-col h1 {
+            font-size: clamp(3.5rem, 8vw, 5rem);
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .contact-info-col p {
+            color: var(--gray-text);
+            font-weight: 300;
+            max-width: 20rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-block {
+            margin-bottom: 3rem;
+        }
+
+        .info-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--orangered);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .info-value {
+            font-size: 1.125rem;
+            font-weight: 300;
+            color: #000;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid var(--gray-border);
+            padding: 0.75rem 0;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 300;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            border-color: #000;
+        }
+
+        textarea.form-input {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: var(--orangered);
+            color: #fff;
+            border: none;
+            padding: 1.25rem 3rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            font-size: 11px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .btn-submit { width: auto; }
+        }
+
+        .btn-submit:hover {
+            background-color: #000;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 4rem 1.5rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            border-bottom: 1px solid #111827;
+            padding-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 4rem;
+                padding-bottom: 5rem;
+            }
+            .footer-brand-col { grid-column: span 2; }
+        }
+
+        .footer-logo {
+            font-size: 1.75rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .footer-desc {
+            color: #6b7280;
+            max-width: 18rem;
+            font-weight: 300;
+            line-height: 1.7;
+            font-size: 0.85rem;
+        }
+
+        .footer-nav-title {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--orangered);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #4b5563;
+        }
+
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-banner">
+            Curated Excellence • Delivered in Nairobi
+        </div>
+        <nav class="header-nav">
+            <a href="index.html" class="logo serif">
+                MD Collection<span style="color: var(--orangered);">.</span>
+            </a>
+            <div class="nav-links">
+                <a href="catalogue.html">Catalogue</a>
+                <a href="catalogue.html?cat=Kitchenware">Kitchenware</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="bag-link">
+                <a href="#">Bag (0)</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-grid">
+            <div class="contact-info-col">
+                <h1 class="serif">Customer <br>Service.</h1>
+                <p>Have questions about your order, shipping, or our current catalogue? Our team is here to assist you.</p>
+                
+                <div class="info-block">
+                    <span class="info-label">Order Support</span>
+                    <a href="mailto:orders@mdcollection.ke" class="info-value">orders@mdcollection.ke</a>
+                    <span class="info-value">+254 700 000 000</span>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">Shipping & Returns</span>
+                    <span class="info-value">Same-day delivery within Nairobi</span>
+                    <span class="info-value">14-day exchange policy</span>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label">Live Support</span>
+                    <span class="info-value">Mon — Fri: 08:00 — 20:00</span>
+                    <span class="info-value">Sat — Sun: 10:00 — 16:00</span>
+                </div>
+            </div>
+
+            <div class="contact-form-col">
+                <form action="#">
+                    <div class="form-group">
+                        <label class="form-label">Order Number (Optional)</label>
+                        <input type="text" class="form-input" placeholder="#MD-0000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-input" placeholder="How can we help with your order?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <h3 class="footer-logo serif">MD Collection<span style="color: var(--orangered);">.</span></h3>
+                <p class="footer-desc">Defining the modern aesthetic through quality materials and timeless design.</p>
+            </div>
+            <div>
+                <h4 class="footer-nav-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="catalogue.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Shipping</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-nav-title">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 MD Collection</span>
+            <span>Nairobi / Kenya</span>
+        </div>
+    </footer>
+</body>
+</html>

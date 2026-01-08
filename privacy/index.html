@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | MD Collection</title>
+    <link href="/style.txt" rel="stylesheet">
+    <style>
+        :root {
+            --orangered: #FF4500;
+            --gray-light: #f8f8f8;
+            --gray-border: #f3f4f6;
+            --gray-text: #6b7280;
+            --max-width: 1280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        header {
+            border-bottom: 1px solid var(--gray-border);
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .top-banner {
+            background-color: #000;
+            color: #fff;
+            font-size: 9px;
+            padding: 0.6rem 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+        }
+
+        nav.header-nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: -0.025em;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            align-items: center;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links { display: flex; gap: 3rem; font-size: 11px; }
+        }
+
+        .legal-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        .legal-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .legal-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 3rem 0 1.5rem;
+            font-weight: 600;
+        }
+
+        .legal-content p {
+            color: var(--gray-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .legal-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.2rem;
+            color: var(--gray-text);
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 5rem 1.5rem 2.5rem;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid { grid-template-columns: repeat(4, 1fr); gap: 4rem; }
+            .footer-brand-col { grid-column: span 2; }
+        }
+
+        .footer-logo { font-size: 1.75rem; font-style: italic; margin-bottom: 1.5rem; display: block; }
+        .footer-desc { color: #9ca3af; max-width: 20rem; font-weight: 300; line-height: 1.8; font-size: 0.9rem; }
+        .footer-nav-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--orangered); font-weight: 600; margin-bottom: 2rem; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+        .footer-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; transition: color 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { max-width: var(--max-width); margin: 0 auto; padding-top: 2.5rem; display: flex; flex-direction: column; gap: 2rem; align-items: center; font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em; color: #6b7280; }
+
+        @media (min-width: 640px) {
+            .footer-bottom { flex-direction: row; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-banner">Curated Excellence • Countrywide Delivery</div>
+        <nav class="header-nav">
+            <a href="/" class="logo serif">MD Collection<span style="color: var(--orangered);">.</span></a>
+            <div class="nav-links">
+                <a href="catalogue/?cat=clothes">Clothes</a>
+                <a href="catalogue/?cat=shoes">Shoes</a>
+                <a href="catalogue/?cat=handbags">Handbags</a>
+                <a href="catalogue/?cat=kitchenware">Kitchenware</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="legal-section">
+        <div class="legal-header">
+            <h1 class="legal-title serif">Privacy Policy</h1>
+            <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gray-text);">Last Updated: January 2026</p>
+        </div>
+
+        <div class="legal-content">
+            <p>At MD Collection, we are committed to maintaining the trust and confidence of our visitors to our web site. In this Privacy Policy, we’ve provided detailed information on when and why we collect personal information, how we use it, and how we keep it secure.</p>
+            
+            <h2>Information Collection</h2>
+            <p>We collect information from you when you register on our site, place an order, or subscribe to our newsletter. The information collected may include your name, email address, mailing address, and phone number.</p>
+
+            <h2>How We Use Your Data</h2>
+            <p>Any of the information we collect from you may be used in one of the following ways:</p>
+            <ul>
+                <li>To personalize your experience and better respond to your individual needs.</li>
+                <li>To improve our website offerings based on the information and feedback we receive from you.</li>
+                <li>To process transactions quickly and securely.</li>
+                <li>To send periodic emails regarding your order or other products and services.</li>
+            </ul>
+
+            <h2>Data Security</h2>
+            <p>We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information. We offer the use of a secure server and all sensitive/credit information is transmitted via Secure Socket Layer (SSL) technology.</p>
+
+            <h2>Cookies</h2>
+            <p>We use cookies to help us remember and process the items in your shopping cart and understand and save your preferences for future visits.</p>
+
+            <h2>Contact Us</h2>
+            <p>If there are any questions regarding this privacy policy, you may contact us using the information on our contact page.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <h3 class="footer-logo serif">MD Collection<span style="color: var(--orangered);">.</span></h3>
+                <p class="footer-desc">Premium clothes, shoes, and home essentials curated for the modern Nairobi lifestyle.</p>
+            </div>
+            <div>
+                <h4 class="footer-nav-title">Shop Collections</h4>
+                <ul class="footer-links">
+                    <li><a href="catalogue/?cat=clothes">Apparel</a></li>
+                    <li><a href="catalogue/?cat=shoes">Footwear</a></li>
+                    <li><a href="catalogue/?cat=handbags">Handbags</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-nav-title">Information</h4>
+                <ul class="footer-links">
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/shipping">Shipping & Returns</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 MD Collection</span>
+            <span>Nairobi / Kenya</span>
+        </div>
+    </footer>
+</body>
+</html>

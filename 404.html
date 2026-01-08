@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | MD Collection</title>
+    <link href="/style.txt" rel="stylesheet">
+    <style>
+        :root {
+            --orangered: #FF4500;
+            --gray-light: #f8f8f8;
+            --gray-border: #f3f4f6;
+            --gray-text: #6b7280;
+            --max-width: 1280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        header {
+            border-bottom: 1px solid var(--gray-border);
+            background-color: #fff;
+        }
+
+        nav.header-nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: -0.025em;
+        }
+
+        .error-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem;
+        }
+
+        .error-content {
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: clamp(5rem, 15vw, 10rem);
+            line-height: 1;
+            color: var(--gray-border);
+            margin-bottom: 1rem;
+        }
+
+        .error-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .error-desc {
+            color: var(--gray-text);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            background-color: var(--orangered);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: 11px;
+        }
+
+        .btn-primary:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+        }
+
+        .suggested-links {
+            margin-top: 4rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .suggested-links a {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        .suggested-links a:hover {
+            border-color: var(--orangered);
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 2.5rem 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-bottom {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a href="/" class="logo serif">
+                MD Collection<span style="color: var(--orangered);">.</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="error-section">
+        <div class="error-content">
+            <h1 class="error-code serif">404</h1>
+            <h2 class="error-title serif">Out of <i>Style.</i></h2>
+            <p class="error-desc">The piece or page you are looking for has been moved, archived, or no longer exists.</p>
+            
+            <a href="/" class="btn-primary">Back to Collection</a>
+
+            <div class="suggested-links">
+                <a href="/catalogue/?cat=clothes">Apparel</a>
+                <a href="/catalogue/?cat=shoes">Footwear</a>
+                <a href="/catalogue/?cat=handbags">Handbags</a>
+                <a href="/contact">Assistance</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <span>© 2026 MD Collection</span>
+            <span>Nairobi / Kenya</span>
+        </div>
+    </footer>
+</body>
+</html>

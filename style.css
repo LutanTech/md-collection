@@ -1,0 +1,119 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --grey-light: #f4f4f4;
+    --grey-dark: #333333;
+    --orange-red: #FF4500;
+    --radius: 2px;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+header {
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--grey-light);
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+main {
+    padding: 40px 5%;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    border: 1px solid var(--grey-light);
+    padding: 10px;
+    border-radius: var(--radius);
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    background-color: var(--grey-light);
+    object-fit: cover;
+}
+
+.price {
+    color: var(--orange-red);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.cta-btn {
+    background-color: var(--orange-red);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid var(--black);
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: var(--radius);
+}
+
+.product-detail {
+    display: flex;
+    gap: 50px;
+}
+
+.product-image {
+    flex: 1;
+    height: 500px;
+    background-color: var(--grey-light);
+}
+
+.product-info {
+    flex: 1;
+}
+
+#checkout-list div {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--grey-light);
+}
